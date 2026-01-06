@@ -137,3 +137,8 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+# Functions build artifacts (don't commit node_modules or .next build outputs)
+/functions/node_modules/
+/functions/.next/
+/functions/.env
+/functions/dist/

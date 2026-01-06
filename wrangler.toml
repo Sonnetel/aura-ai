@@ -1,0 +1,27 @@
+name = "aura-ai"
+type = "javascript"
+account_id = ""
+workers_dev = true
+compatibility_date = "2024-01-01"
+compatibility_flags = ["streams_enable_constructors"]
+
+[build]
+command = "npm run build"
+cwd = "./"
+
+[build.upload]
+format = "service-worker"
+
+[[routes]]
+pattern = "example.com/*"
+zone_name = "example.com"
+
+[env.production]
+routes = [
+  { pattern = "aura-ai.pages.dev/*", zone_name = "pages.dev" }
+]
+
+[[env.production.routes]]
+pattern = "yourdomain.com/*"
+zone_name = "yourdomain.com"
+
